@@ -1,8 +1,18 @@
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    ><url>
-            <loc>http://localhost:1313/Amaral-Cyber-Journal/categories/</loc></url><url>
-            <loc>http://localhost:1313/Amaral-Cyber-Journal/</loc></url><url>
-            <loc>http://localhost:1313/Amaral-Cyber-Journal/posts/</loc></url><url>
-            <loc>http://localhost:1313/Amaral-Cyber-Journal/tags/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:1313/Amaral-Cyber-Journal/en/sitemap.xml</loc>
+    
+      <lastmod>2026-04-18T18:50:21-03:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/Amaral-Cyber-Journal/pt-br/sitemap.xml</loc>
+    
+      <lastmod>2026-04-18T18:47:20-03:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>

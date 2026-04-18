@@ -1,0 +1,23 @@
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>http://localhost:1313/Amaral-Cyber-Journal/pt-br/</loc><lastmod>2026-04-18T18:47:20-03:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/Amaral-Cyber-Journal/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="pt-br"
+                    href="http://localhost:1313/Amaral-Cyber-Journal/pt-br/"
+                    /></url><url>
+            <loc>http://localhost:1313/Amaral-Cyber-Journal/pt-br/posts/</loc><lastmod>2026-04-18T18:47:20-03:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/Amaral-Cyber-Journal/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="pt-br"
+                    href="http://localhost:1313/Amaral-Cyber-Journal/pt-br/posts/"
+                    /></url><url>
+            <loc>http://localhost:1313/Amaral-Cyber-Journal/pt-br/posts/teste/</loc><lastmod>2026-04-18T18:47:20-03:00</lastmod></url></urlset>

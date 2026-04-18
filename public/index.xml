@@ -1,9 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>My New Hugo Site</title>
+        <title>Amaral Cyber Journal</title>
         <link>http://localhost:1313/Amaral-Cyber-Journal/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2026 18:50:21 -0300</lastBuildDate>
             <atom:link href="http://localhost:1313/Amaral-Cyber-Journal/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>Test</title>
+    <link>http://localhost:1313/Amaral-Cyber-Journal/posts/test/</link>
+    <pubDate>Sat, 18 Apr 2026 18:50:21 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/Amaral-Cyber-Journal/posts/test/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>
