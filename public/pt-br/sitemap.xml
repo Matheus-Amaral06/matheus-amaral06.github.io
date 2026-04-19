@@ -20,4 +20,13 @@
                     hreflang="pt-br"
                     href="http://localhost:1313/pt-br/posts/"
                     /></url><url>
-            <loc>http://localhost:1313/pt-br/posts/teste/</loc><lastmod>2026-04-18T18:47:20-03:00</lastmod></url></urlset>
+            <loc>http://localhost:1313/pt-br/posts/teste/</loc><lastmod>2026-04-18T18:47:20-03:00</lastmod></url><url>
+            <loc>http://localhost:1313/pt-br/about/</loc><lastmod>2026-04-18T18:14:03-03:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/en/about/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="pt-br"
+                    href="http://localhost:1313/pt-br/about/"
+                    /></url></urlset>

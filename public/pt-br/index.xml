@@ -3,13 +3,14 @@
         <title>Amaral Cyber Journal</title>
         <link>http://localhost:1313/pt-br/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>pt-BR</language><lastBuildDate>Sat, 18 Apr 2026 18:47:20 -0300</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>pt-BR</language><managingEditor>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</managingEditor>
+            <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster><lastBuildDate>Sat, 18 Apr 2026 18:47:20 -0300</lastBuildDate>
             <atom:link href="http://localhost:1313/pt-br/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Teste</title>
     <link>http://localhost:1313/pt-br/posts/teste/</link>
     <pubDate>Sat, 18 Apr 2026 18:47:20 -0300</pubDate>
-    <author>xxxx</author>
+    <author>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</author>
     <guid>http://localhost:1313/pt-br/posts/teste/</guid>
     <description><![CDATA[]]></description>
 </item>

@@ -50,7 +50,34 @@ defaultContentLanguageInSubdir = true
   # site default theme ["auto", "light", "dark"]
   defaultTheme = "light"
   title = "Amaral Cyber Journal"
-  images = ["/logo.png"]
+  images = ["/static/images/avatar.png"]
+
+  [params.author]
+    name = "Matheus Amaral Moraes"
+    email = "matheusamaralmoraes06@gmail.com"
+
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+
+    [params.header.title]
+        name = "Amaral Cyber Journal"
+        typeit = true
+
+  [params.home]
+    rss = 10
+    [params.home.profile]
+        enable = true
+        gravatarEmail = ""
+        avatarURL = "/images/avatar.png"
+        title = ""
+        subtitle = ""
+        social = true
+
+  [params.social]
+    GitHub = "Matheus-Amaral06"
+    Linkedin = "matheus-amaral-moraes"
+    Email = "matheusamaralmoraes06@gmail.com"
 
 
 [markup]
