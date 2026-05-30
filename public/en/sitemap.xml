@@ -2,31 +2,22 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://matheus-amaral06.github.io/en/about/</loc><lastmod>2026-04-19T11:12:31-03:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/about/</loc><lastmod>2026-05-26T14:43:41-03:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/</loc><lastmod>2026-05-26T14:43:41-03:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
-                        href="https://matheus-amaral06.github.io/pt-br/about/"
+                        href="http://localhost:1313/pt-br/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://matheus-amaral06.github.io/en/about/"
+                    href="http://localhost:1313/en/"
                     /></url><url>
-            <loc>https://matheus-amaral06.github.io/en/</loc><lastmod>2026-04-19T11:12:31-03:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/posts/</loc><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
-                        href="https://matheus-amaral06.github.io/pt-br/"
+                        href="http://localhost:1313/pt-br/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://matheus-amaral06.github.io/en/"
-                    /></url><url>
-            <loc>https://matheus-amaral06.github.io/en/posts/</loc><lastmod>2026-04-18T18:50:21-03:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="pt-br"
-                        href="https://matheus-amaral06.github.io/pt-br/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://matheus-amaral06.github.io/en/posts/"
-                    /></url><url>
-            <loc>https://matheus-amaral06.github.io/en/posts/test/</loc><lastmod>2026-04-18T18:50:21-03:00</lastmod></url></urlset>
+                    href="http://localhost:1313/en/posts/"
+                    /></url></urlset>

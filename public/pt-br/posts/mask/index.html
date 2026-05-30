@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Como isso funciona? - Máscara de rede e CIDR - Amaral Cyber Journal</title><meta name="Description" content="This is my cool site"><meta property="og:url" content="http://localhost:1313/pt-br/posts/mask/">
+  <meta property="og:site_name" content="Amaral Cyber Journal">
+  <meta property="og:title" content="Como isso funciona? - Máscara de rede e CIDR">
+  <meta property="og:description" content="Máscara de rede A máscara de redes é um conjunto de 4 octetos de bits, ou seja 32 bits ou 4 bytes, onde o seu trabalho é identificar qual parte do seu ip é rede e qual é host, ela identifica bit de rede como 1 e bit de host como 0, onde o 1 sempre vem primeiro e os bits 1 e 0 não se misturam.
+11111111.11111111.11111111.00000000 certo |_________________________|________| | | REDE HOST 11111111.11111111.00000000.00000000 certo |________________|_________________| | | REDE HOST 01111111.11101101.10010111.00100100 errado 11100011.11101101.11110100.10111100 errado Ela foi documentada a primeira vez na RFC 791 (Request For Comment) Determinando classes apartir do primeiro octeto do endereço IP que definem quantos bits terá a sua máscara de rede.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-05-26T19:24:50-03:00">
+    <meta property="article:modified_time" content="2026-05-26T19:24:50-03:00">
+    <meta property="og:image" content="http://localhost:1313/static/images/avatar.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/static/images/avatar.png">
+  <meta name="twitter:title" content="Como isso funciona? - Máscara de rede e CIDR">
+  <meta name="twitter:description" content="Máscara de rede A máscara de redes é um conjunto de 4 octetos de bits, ou seja 32 bits ou 4 bytes, onde o seu trabalho é identificar qual parte do seu ip é rede e qual é host, ela identifica bit de rede como 1 e bit de host como 0, onde o 1 sempre vem primeiro e os bits 1 e 0 não se misturam.
+11111111.11111111.11111111.00000000 certo |_________________________|________| | | REDE HOST 11111111.11111111.00000000.00000000 certo |________________|_________________| | | REDE HOST 01111111.11101101.10010111.00100100 errado 11100011.11101101.11110100.10111100 errado Ela foi documentada a primeira vez na RFC 791 (Request For Comment) Determinando classes apartir do primeiro octeto do endereço IP que definem quantos bits terá a sua máscara de rede.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/pt-br/posts/mask/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Como isso funciona? - Máscara de rede e CIDR",
+        "inLanguage": "pt-BR",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/pt-br\/posts\/mask\/"
+        },"genre": "posts","wordcount":  334 ,
+        "url": "http:\/\/localhost:1313\/pt-br\/posts\/mask\/","datePublished": "2026-05-26T19:24:50-03:00","dateModified": "2026-05-26T19:24:50-03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Matheus Amaral Moraes"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'light';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/pt-br/" title="Amaral Cyber Journal"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/pt-br/posts/"> Posts </a><a class="menu-item" href="/pt-br/about/"> Sobre </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Trocar tema">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Selecione o idioma">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/pt-br/posts/mask/" selected>Português</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/pt-br/" title="Amaral Cyber Journal"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/pt-br/posts/" title="">Posts</a><a class="menu-item" href="/pt-br/about/" title="">Sobre</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Trocar tema">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Selecione o idioma">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/pt-br/posts/mask/" selected>Português</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Conteúdos</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Como isso funciona? - Máscara de rede e CIDR</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/pt-br/" title="Author" rel="author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>Matheus Amaral Moraes</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-05-26">2026-05-26</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;334 palavras&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;2 minutos&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Conteúdos</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#máscara-de-rede">Máscara de rede</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="máscara-de-rede">Máscara de rede</h3>
+<p>A máscara de redes é um conjunto de 4 octetos de bits, ou seja 32 bits ou 4 bytes, onde o seu trabalho é identificar qual parte do seu ip é rede e qual é host, ela identifica bit de rede como 1 e bit de host
+como 0, onde o 1 sempre vem primeiro e os bits 1 e 0 não se misturam.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-markdown">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">11111111.11111111.11111111.00000000 certo
+</span></span><span class="line"><span class="cl">|_________________________|________|
+</span></span><span class="line"><span class="cl">            |                  |
+</span></span><span class="line"><span class="cl">          REDE               HOST
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">11111111.11111111.00000000.00000000 certo
+</span></span><span class="line"><span class="cl">|________________|_________________|
+</span></span><span class="line"><span class="cl">        |                 |
+</span></span><span class="line"><span class="cl">      REDE               HOST
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">01111111.11101101.10010111.00100100 errado
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">11100011.11101101.11110100.10111100 errado</span></span></code></pre></div></div>
+<p>Ela foi documentada a primeira vez na <a href="https://datatracker.ietf.org/doc/html/rfc791" title="RFC 791" target="_blank" rel="noopener noreffer ">RFC 791 (Request For Comment)</a> Determinando classes apartir do primeiro octeto do endereço IP
+que definem quantos bits terá a sua máscara de rede.</p>
+<h4 id="classe-a">Classe A</h4>
+<p>Todos os IP&rsquo;s da classe A começam com 0, os IP&rsquo;s podem ser de 0-127.x.x.x na forma decimal, essa classe determina a máscara 255.0.0.0, para descobrirmos a quantidade de hosts
+fazemos o calculo 2²⁴ - 2 = 16.777.214</p>
+<div class="details admonition note open">
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-pen-to-square" aria-hidden="true"></i>Nota<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content"><p>Utilizamos a base 2 pois só tem possibilidade de ser 1 ou 0 por ser binário, e elevado a 24 pois é a quantidade de bits que podem ser hosts, e menos dois pois um ip é o ip da rede e o outro
+é do broadcast. Segue a mesma lógica para todas as classes</p></div>
+    </div>
+</div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-markdown">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">255.0.0.0
+</span></span><span class="line"><span class="cl">11111111.00000000.00000000.00000000 
+</span></span><span class="line"><span class="cl">|_______|_________________________|
+</span></span><span class="line"><span class="cl">    |                | 
+</span></span><span class="line"><span class="cl">   REDE             HOST
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">0-127
+</span></span><span class="line"><span class="cl">0xxxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx</span></span></code></pre></div></div>
+<h4 id="classe-b">Classe B</h4>
+<p>Na Classe B os 2 primeiros bits são 1 e em sequencia 0, os IP vão de 128-191, essa classe determina a máscara 255.255.0.0, tendo um total de 65.536 hosts</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-markdown">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">255.255.0.0
+</span></span><span class="line"><span class="cl">11111111.11111111.00000000.00000000 
+</span></span><span class="line"><span class="cl">|________________|_________________|       
+</span></span><span class="line"><span class="cl">        |                 |                
+</span></span><span class="line"><span class="cl">      REDE               HOST              
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">IP&#39;s 
+</span></span><span class="line"><span class="cl">128-191
+</span></span><span class="line"><span class="cl">10xxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx</span></span></code></pre></div></div>
+<h4 id="classe-c">Classe C</h4>
+<p>Na Classe C os 3 primeiros bits são alterados ficando &ldquo;110&rdquo;, essa classe determina a máscara 255.255.255.0, tendo um total de 254 hosts</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-markdown">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">255.255.255.0
+</span></span><span class="line"><span class="cl">11111111.11111111.11111111.00000000 
+</span></span><span class="line"><span class="cl">|_________________________|________|
+</span></span><span class="line"><span class="cl">            |                  |           
+</span></span><span class="line"><span class="cl">          REDE               HOST          
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">IP&#39;s 
+</span></span><span class="line"><span class="cl">192-224
+</span></span><span class="line"><span class="cl">110xxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx</span></span></code></pre></div></div>
+<div class="details admonition note open">
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-pen-to-square" aria-hidden="true"></i>Nota<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content"><p>Existem também classe D e E, mas não seram tratadas nesse post para não prejudicar o racíonio.</p></div>
+    </div>
+</div><table>
+  <thead>
+      <tr>
+          <th>Classe</th>
+          <th>Binário</th>
+          <th>Decimal</th>
+          <th>Quantidade de Hosts</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>A</td>
+          <td>0xxxxxxx</td>
+          <td>0-127.x.x.x</td>
+          <td>16.777.214</td>
+      </tr>
+      <tr>
+          <td>B</td>
+          <td>10xxxxxx</td>
+          <td>128-191.x.x.x</td>
+          <td>65.536</td>
+      </tr>
+      <tr>
+          <td>C</td>
+          <td>110xxxxx</td>
+          <td>192-224.x.x.x</td>
+          <td>254</td>
+      </tr>
+  </tbody>
+</table>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Atualizado em 2026-05-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Compartilhe em X" data-sharer="x" data-url="http://localhost:1313/pt-br/posts/mask/" data-title="Como isso funciona? - Máscara de rede e CIDR"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Threads" data-sharer="threads" data-url="http://localhost:1313/pt-br/posts/mask/" data-title="Como isso funciona? - Máscara de rede e CIDR"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Facebook" data-sharer="facebook" data-url="http://localhost:1313/pt-br/posts/mask/"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/pt-br/posts/mask/" data-title="Como isso funciona? - Máscara de rede e CIDR"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Line" data-sharer="line" data-url="http://localhost:1313/pt-br/posts/mask/" data-title="Como isso funciona? - Máscara de rede e CIDR"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em 微博" data-sharer="weibo" data-url="http://localhost:1313/pt-br/posts/mask/" data-title="Como isso funciona? - Máscara de rede e CIDR"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Diaspora" data-sharer="diaspora" data-url="http://localhost:1313/pt-br/posts/mask/" data-title="Como isso funciona? - Máscara de rede e CIDR" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2fpt-br%2fposts%2fmask%2f&amp;text=Como%20isso%20funciona%3f%20-%20M%c3%a1scara%20de%20rede%20e%20CIDR" target="_blank" title="Compartilhe em Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Voltar</a></span>&nbsp;|&nbsp;<span><a href="/pt-br/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Possibilitado por <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.161.1">Hugo</a> | Tema - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/pt-br/" target="_blank">Matheus Amaral Moraes</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Voltar ao topo">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="Ver comentários">
+                <i class="fas fa-comment" aria-hidden="true"></i>
+            </a>
+        </div><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script>window.config={"comment":{},"data":{"id-1":"Amaral Cyber Journal","id-2":"Amaral Cyber Journal"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.js"></script></body>
+</html>

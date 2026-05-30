@@ -1,18 +1,44 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Amaral Cyber Journal</title>
-        <link>https://matheus-amaral06.github.io/pt-br/</link>
+        <link>http://localhost:1313/pt-br/</link>
         <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>pt-BR</language><managingEditor>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</managingEditor>
-            <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster><lastBuildDate>Sat, 18 Apr 2026 18:47:20 -0300</lastBuildDate>
-            <atom:link href="https://matheus-amaral06.github.io/pt-br/index.xml" rel="self" type="application/rss+xml" />
+            <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster><lastBuildDate>Tue, 26 May 2026 19:24:50 -0300</lastBuildDate>
+            <atom:link href="http://localhost:1313/pt-br/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Teste</title>
-    <link>https://matheus-amaral06.github.io/pt-br/posts/teste/</link>
-    <pubDate>Sat, 18 Apr 2026 18:47:20 -0300</pubDate>
+    <title>Como isso funciona? - Máscara de rede e CIDR</title>
+    <link>http://localhost:1313/pt-br/posts/mask/</link>
+    <pubDate>Tue, 26 May 2026 19:24:50 -0300</pubDate>
     <author>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</author>
-    <guid>https://matheus-amaral06.github.io/pt-br/posts/teste/</guid>
-    <description><![CDATA[]]></description>
+    <guid>http://localhost:1313/pt-br/posts/mask/</guid>
+    <description><![CDATA[<h3 id="máscara-de-rede">Máscara de rede</h3>
+<p>A máscara de redes é um conjunto de 4 octetos de bits, ou seja 32 bits ou 4 bytes, onde o seu trabalho é identificar qual parte do seu ip é rede e qual é host, ela identifica bit de rede como 1 e bit de host
+como 0, onde o 1 sempre vem primeiro e os bits 1 e 0 não se misturam.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-markdown">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">11111111.11111111.11111111.00000000 certo
+</span></span><span class="line"><span class="cl">|_________________________|________|
+</span></span><span class="line"><span class="cl">            |                  |
+</span></span><span class="line"><span class="cl">          REDE               HOST
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">11111111.11111111.00000000.00000000 certo
+</span></span><span class="line"><span class="cl">|________________|_________________|
+</span></span><span class="line"><span class="cl">        |                 |
+</span></span><span class="line"><span class="cl">      REDE               HOST
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">01111111.11101101.10010111.00100100 errado
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">11100011.11101101.11110100.10111100 errado</span></span></code></pre></div></div>
+<p>Ela foi documentada a primeira vez na <a href="https://datatracker.ietf.org/doc/html/rfc791" title="RFC 791" target="_blank" rel="noopener noreffer ">RFC 791 (Request For Comment)</a> Determinando classes apartir do primeiro octeto do endereço IP
+que definem quantos bits terá a sua máscara de rede.</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -16,8 +16,8 @@ defaultContentLanguageInSubdir = true
 [languages.en]
     weight = 1
     title = "Amaral Cyber Journal"
-    languageCode = "en"
-    languageName = "English"
+    locale = "en"
+    label = "English"
     contentDir = "content/en/"
     [[languages.en.menu.main]]
       weight = 1
@@ -33,8 +33,8 @@ defaultContentLanguageInSubdir = true
   [languages.pt-br]
     weight = 2
     title = "Amaral Cyber Journal"
-    languageCode = "pt-BR"
-    languageName = "Português"
+    locale = "pt-BR"
+    label = "Português"
     contentDir = "content/pt-br/"
     [[languages.pt-br.menu.main]]
       weight = 1

@@ -2,31 +2,22 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://matheus-amaral06.github.io/pt-br/</loc><lastmod>2026-04-18T18:47:20-03:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/pt-br/</loc><lastmod>2026-05-26T19:24:50-03:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://matheus-amaral06.github.io/en/"
+                        href="http://localhost:1313/en/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="pt-br"
-                    href="https://matheus-amaral06.github.io/pt-br/"
+                    href="http://localhost:1313/pt-br/"
                     /></url><url>
-            <loc>https://matheus-amaral06.github.io/pt-br/posts/</loc><lastmod>2026-04-18T18:47:20-03:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/pt-br/posts/mask/</loc><lastmod>2026-05-26T19:24:50-03:00</lastmod></url><url>
+            <loc>http://localhost:1313/pt-br/posts/</loc><lastmod>2026-05-26T19:24:50-03:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://matheus-amaral06.github.io/en/posts/"
+                        href="http://localhost:1313/en/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="pt-br"
-                    href="https://matheus-amaral06.github.io/pt-br/posts/"
-                    /></url><url>
-            <loc>https://matheus-amaral06.github.io/pt-br/posts/teste/</loc><lastmod>2026-04-18T18:47:20-03:00</lastmod></url><url>
-            <loc>https://matheus-amaral06.github.io/pt-br/about/</loc><lastmod>2026-04-18T18:14:03-03:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://matheus-amaral06.github.io/en/about/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="pt-br"
-                    href="https://matheus-amaral06.github.io/pt-br/about/"
+                    href="http://localhost:1313/pt-br/posts/"
                     /></url></urlset>
