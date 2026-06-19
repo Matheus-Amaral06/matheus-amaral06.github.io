@@ -1,6 +1,6 @@
 baseURL = "https://matheus-amaral06.github.io/"
 # Change the default theme to be use when building the site with Hugo
-theme = "LoveIt"
+theme = "hugo-blog-awesome"
 defaultContentLanguage = "en"
 # website title
 title = "My New Hugo Site"

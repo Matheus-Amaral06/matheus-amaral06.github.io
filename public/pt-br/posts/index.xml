@@ -1,21 +1,33 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Posts - Amaral Cyber Journal</title>
-        <link>http://localhost:1313/pt-br/posts/</link>
-        <description>Posts | Amaral Cyber Journal</description>
-        <generator>Hugo -- gohugo.io</generator><language>pt-BR</language><managingEditor>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</managingEditor>
-            <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster><lastBuildDate>Tue, 26 May 2026 19:24:50 -0300</lastBuildDate><atom:link href="http://localhost:1313/pt-br/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Como isso funciona? - Máscara de rede e CIDR</title>
-    <link>http://localhost:1313/pt-br/posts/mask/</link>
-    <pubDate>Tue, 26 May 2026 19:24:50 -0300</pubDate>
-    <author>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</author>
-    <guid>http://localhost:1313/pt-br/posts/mask/</guid>
-    <description><![CDATA[<h3 id="máscara-de-rede">Máscara de rede</h3>
-<p>A máscara de redes é um conjunto de 4 octetos de oito bits, que seria 32 bits ou 4 bytes, onde o seu trabalho é identificar qual parte do seu ip é rede e qual é host, ela identifica bit de rede como 1 e bit de host
-como 0.
-[!TIPS]
-alsdj
-Ela foi documentada a primeira vez na RFC 791 (Request For Comment), funcionando com classes sendo elas A, B e C.</p>]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Amaral Cyber Journal</title>
+    <link>http://localhost:1313/pt-br/posts/</link>
+    <description>Recent content in Posts on Amaral Cyber Journal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <managingEditor>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</managingEditor>
+    <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster>
+    <lastBuildDate>Tue, 26 May 2026 19:24:50 -0300</lastBuildDate><atom:link href="http://localhost:1313/pt-br/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Como isso funciona? - Máscara de rede e CIDR</title>
+      <link>http://localhost:1313/pt-br/posts/mascara/</link>
+      <pubDate>Tue, 26 May 2026 19:24:50 -0300</pubDate>
+      <author>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</author>
+      <guid>http://localhost:1313/pt-br/posts/mascara/</guid>
+      
+      <description>&lt;h3 id=&#34;o-que-é&#34;&gt;O que é?&lt;/h3&gt;
+&lt;p&gt;A mácara de rede é uma ferramenta que possibilita identificação, segmentação de redes e limitação de número de máquinas na rede. Uma mácara é
+composta por quatro octetos de bits separados por um &amp;ldquo;.&amp;rdquo;, mas para melhor visualisação o padrão é em forma decimal igualmente ao IPv4.&lt;/p&gt;
+&lt;p&gt;&amp;lsquo;&amp;lsquo;&amp;lsquo;markdown
+Decimal : 255.255.255.0 &amp;lt;- Forma mais comum
+Binário : 11111111.11111111.11111111.00000000 &amp;lt;- Forma que o computador interpreta&lt;/p&gt;
+&lt;p&gt;&amp;rsquo;&amp;rsquo;&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;Você deve estar se perguntando, por que tem octetos que apenas tem &amp;ldquo;1&amp;rdquo; e octetos que apenas tem &amp;ldquo;0&amp;rdquo;. Cada binário tem sua função, informar se o
+bit que está na mesma poscição do endereço IPv4 vai servir para identificar a rede ou o host, o &amp;ldquo;1&amp;rdquo; vai ser lido para identificar a rede, já o &amp;ldquo;0&amp;rdquo;
+serve para identifficar os host que seriam os aparelhos conectados na rede. Um exemplo abaixo.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
 </rss>
