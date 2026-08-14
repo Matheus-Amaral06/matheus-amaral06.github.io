@@ -36,7 +36,7 @@ Você deve estar se perguntando, por que tem octetos que apenas tem “1” e oc
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/posts\/masc%C3%A1ra-de-redes\/mascara\/"
-        },"genre": "posts","wordcount":  614 ,
+        },"genre": "posts","wordcount":  646 ,
         "url": "http:\/\/localhost:1313\/posts\/masc%C3%A1ra-de-redes\/mascara\/","datePublished": "2026-07-22T19:24:50-03:00","dateModified": "2026-07-22T19:24:50-03:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -89,8 +89,8 @@ Você deve estar se perguntando, por que tem octetos que apenas tem “1” e oc
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Como isso funciona? - Máscara de rede, CIDR e VLSM</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>Matheus Amaral Moraes</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-07-22">2026-07-22</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;614 palavras&nbsp;
-                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;3 minutos&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-07-22">2026-07-22</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;646 palavras&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;4 minutos&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Conteúdos</span>
@@ -136,17 +136,14 @@ podendo ter endereços IP 192.168.64.x, o x pode ser de 1 a 254.</p>
 <h4 id="cuidado">Cuidado</h4>
 <p>Mas não se engane, nunca vai haver uma máscara em que o primeiro octeto começa com 0 e nem qualquer mistura de 1 e 0, sempre a identificação de
 rede vem primeiro e em seguida vem a identificação de host.</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-markdown">
-        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
-        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Errado : 00000000.00000000.11111111.11111111
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Errado : 11101010.00011000.11110001.11000010
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Certo  : 11111111.00000000.00000000.00000000</span></span></code></pre></div></div>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/mask3.png"
+        data-srcset="/images/mask3.png, /images/mask3.png 1.5x, /images/mask3.png 2x"
+        data-sizes="auto"
+        alt="/images/mask3.png"
+        title="image" /></p>
 <h3 id="classes">Classes</h3>
 <p>Ademais a isso na <a href="https://datatracker.ietf.org/doc/html/rfc791" target="_blank" rel="noopener noreffer ">RFC 791 (Request For Comment)</a>, onde é a documentação sobre o IPV4, é citado o
 funcionamento da máscara de rede de forma breve, junto a isso foi determinado classes para facilitar qual era a máscara utilizada em determinado IP
@@ -197,23 +194,46 @@ classe não se aplica.</p></div>
 <p>Posteriormente veio o CIDR (Classless Inter-Domain Routing), é um novo método que substitui as classes, agora sendo mais flexível e suportando sub-redes.</p>
 <p>sua notação é simples sendo um &ldquo;/&rdquo; juntamente com a quantidade de números de identificação de rede, exemplo /24 é a mesma coisa que 255.255.255.0
 sendo comum encontrar o número de IP junto ao CIDR 192.32.12.0/24.</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-markdown">
-        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
-        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">/24 : 11111111.11111111.11111111.00000000
-</span></span><span class="line"><span class="cl">/26 : 11111111.11111111.11111111.11000000
-</span></span><span class="line"><span class="cl">/20 : 11111111.11111111.11110000.00000000</span></span></code></pre></div></div>
+<table>
+	<thead>
+			<tr>
+					<th>CIDR</th>
+					<th>binário</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>/24</td>
+					<td>11111111.11111111.11111111.00000000</td>
+			</tr>
+			<tr>
+					<td>/26</td>
+					<td>11111111.11111111.11111111.11000000</td>
+			</tr>
+			<tr>
+					<td>/20</td>
+					<td>11111111.11111111.11110000.00000000</td>
+			</tr>
+	</tbody>
+</table>
 <h3 id="vlsm-variable-length-subnet-masking">VLSM (Variable Length Subnet Masking)</h3>
 <p>VLSM é uma técnica de segmentação de redes, possibilitando a criação de sub-redes, evitando o desperdício de IP.</p>
 <p>Funciona da seguinte maneira: imagine que fomos contratados para configurar a rede de uma loja e temos a seguinte situação, precisamos configurar a rede
 IPv4 149.123.42.0/24, porém o cliente gostaria que tivesse duas redes diferentes, uma rede interna e outra rede com acesso à internet para clientes.
 Antes iríamos usar dois IPv4 diferentes, mas com o VLSM nós adicionamos mais um bit de identificação, dividindo a rede em duas redes diferentes.</p>
 <p>Isso acontece porque, quando adicionamos esse bit de identificação na máscara de rede, o bit correspondente do IPv4 pode ser 0 ou 1, e podemos ir
-adicionando os bits de identificação para suprir a quantidade de hosts necessários, onde o máximo é /31. O máximo não é /32 pois seria apenas um
-IP de identificação e nenhum host ou IP reservado conseguiria se conectar na rede.</p>
-<p>imagem</p>
+adicionando os bits de identificação para suprir a quantidade de hosts necessários, onde o máximo é /31, porém ninguém consegue se conectar
+nessa rede /31, pois por ele só tem um bit de host ele só tem duas possibilidades, porém qualquer rede precisa de broadcast e o ip da rede em si,
+sendo assim os dois ips disponíveis estarão ocupados. O máximo não é /32 pois seria apenas um IP de identificação e nenhum host ou IP reservado
+conseguiria se conectar na rede.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/mask4.png"
+        data-srcset="/images/mask4.png, /images/mask4.png 1.5x, /images/mask4.png 2x"
+        data-sizes="auto"
+        alt="/images/mask4.png"
+        title="image" /></p>
 <p>O VLSM tem a seguinte regra: do maior número de hosts para o menor número de hosts. Então, quando for fazer várias sub-redes, fique atento a
 quais redes precisam de um número maior de hosts.</p>
 </div><div class="post-footer" id="post-footer">
