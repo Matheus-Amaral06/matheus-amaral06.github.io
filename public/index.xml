@@ -1,17 +1,24 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Amaral Cyber Journal</title>
-        <link>http://localhost:1313/Amaral-Cyber-Journal/</link>
+        <title>My New Hugo Site</title>
+        <link>http://localhost:1313/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2026 18:50:21 -0300</lastBuildDate>
-            <atom:link href="http://localhost:1313/Amaral-Cyber-Journal/index.xml" rel="self" type="application/rss+xml" />
+        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><managingEditor>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</managingEditor>
+            <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster><lastBuildDate>Wed, 22 Jul 2026 19:24:50 -0300</lastBuildDate>
+            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Test</title>
-    <link>http://localhost:1313/Amaral-Cyber-Journal/posts/test/</link>
-    <pubDate>Sat, 18 Apr 2026 18:50:21 -0300</pubDate>
-    <author>xxxx</author>
-    <guid>http://localhost:1313/Amaral-Cyber-Journal/posts/test/</guid>
-    <description><![CDATA[]]></description>
+    <title>Como isso funciona? - Máscara de rede, CIDR e VLSM</title>
+    <link>http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/</link>
+    <pubDate>Wed, 22 Jul 2026 19:24:50 -0300</pubDate>
+    <author>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</author>
+    <guid>http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/</guid>
+    <description><![CDATA[<h3 id="máscara-de-rede">Máscara de Rede</h3>
+<p>A máscara de rede é uma ferramenta que possibilita identificação, segmentação de redes e limitação de número de máquinas na rede.
+Uma máscara é composta por quatro octetos de bits separados por um &ldquo;.&rdquo;, mas para melhor visualização o padrão é em forma decimal igualmente ao IPv4.</p>
+<p></p>
+<p>Você deve estar se perguntando, por que tem octetos que apenas tem &ldquo;1&rdquo; e octetos que apenas tem &ldquo;0&rdquo;. Cada binário tem sua função, informar se o
+bit que está na mesma posição do endereço IPv4 vai servir para identificar a rede ou o host, o &ldquo;1&rdquo; vai ser lido para identificar a rede, já o
+&ldquo;0&rdquo; serve para identificar os host que seriam os aparelhos conectados na rede. Um exemplo abaixo.</p>]]></description>
 </item>
 </channel>
 </rss>

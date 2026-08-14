@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Como isso funciona? - Máscara de rede, CIDR e VLSM - My New Hugo Site</title><meta name="Description" content="This is my cool site"><meta property="og:url" content="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/">
+	<meta property="og:site_name" content="My New Hugo Site">
+	<meta property="og:title" content="Como isso funciona? - Máscara de rede, CIDR e VLSM">
+	<meta property="og:description" content="Máscara de Rede A máscara de rede é uma ferramenta que possibilita identificação, segmentação de redes e limitação de número de máquinas na rede. Uma máscara é composta por quatro octetos de bits separados por um “.”, mas para melhor visualização o padrão é em forma decimal igualmente ao IPv4.
+Você deve estar se perguntando, por que tem octetos que apenas tem “1” e octetos que apenas tem “0”. Cada binário tem sua função, informar se o bit que está na mesma posição do endereço IPv4 vai servir para identificar a rede ou o host, o “1” vai ser lido para identificar a rede, já o “0” serve para identificar os host que seriam os aparelhos conectados na rede. Um exemplo abaixo.">
+	<meta property="og:locale" content="pt_br">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-07-22T19:24:50-03:00">
+		<meta property="article:modified_time" content="2026-07-22T19:24:50-03:00">
+		<meta property="og:image" content="http://localhost:1313/static/images/avatar.png">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="http://localhost:1313/static/images/avatar.png">
+	<meta name="twitter:title" content="Como isso funciona? - Máscara de rede, CIDR e VLSM">
+	<meta name="twitter:description" content="Máscara de Rede A máscara de rede é uma ferramenta que possibilita identificação, segmentação de redes e limitação de número de máquinas na rede. Uma máscara é composta por quatro octetos de bits separados por um “.”, mas para melhor visualização o padrão é em forma decimal igualmente ao IPv4.
+Você deve estar se perguntando, por que tem octetos que apenas tem “1” e octetos que apenas tem “0”. Cada binário tem sua função, informar se o bit que está na mesma posição do endereço IPv4 vai servir para identificar a rede ou o host, o “1” vai ser lido para identificar a rede, já o “0” serve para identificar os host que seriam os aparelhos conectados na rede. Um exemplo abaixo.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Como isso funciona? - Máscara de rede, CIDR e VLSM",
+        "inLanguage": "pt-br",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/masc%C3%A1ra-de-redes\/mascara\/"
+        },"genre": "posts","wordcount":  614 ,
+        "url": "http:\/\/localhost:1313\/posts\/masc%C3%A1ra-de-redes\/mascara\/","datePublished": "2026-07-22T19:24:50-03:00","dateModified": "2026-07-22T19:24:50-03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Matheus Amaral Moraes"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'light';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My New Hugo Site"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/sobre/"> Sobre </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Trocar tema">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My New Hugo Site"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/sobre/" title="">Sobre</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Trocar tema">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Conteúdos</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Como isso funciona? - Máscara de rede, CIDR e VLSM</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>Matheus Amaral Moraes</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-07-22">2026-07-22</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;614 palavras&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;3 minutos&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Conteúdos</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#máscara-de-rede">Máscara de Rede</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#cidr-classless-inter-domain-routing">CIDR (Classless Inter-Domain Routing)</a></li>
+        <li><a href="#vlsm-variable-length-subnet-masking">VLSM (Variable Length Subnet Masking)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="máscara-de-rede">Máscara de Rede</h3>
+<p>A máscara de rede é uma ferramenta que possibilita identificação, segmentação de redes e limitação de número de máquinas na rede.
+Uma máscara é composta por quatro octetos de bits separados por um &ldquo;.&rdquo;, mas para melhor visualização o padrão é em forma decimal igualmente ao IPv4.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/mask1.png"
+        data-srcset="/images/mask1.png, /images/mask1.png 1.5x, /images/mask1.png 2x"
+        data-sizes="auto"
+        alt="/images/mask1.png"
+        title="image" /></p>
+<p>Você deve estar se perguntando, por que tem octetos que apenas tem &ldquo;1&rdquo; e octetos que apenas tem &ldquo;0&rdquo;. Cada binário tem sua função, informar se o
+bit que está na mesma posição do endereço IPv4 vai servir para identificar a rede ou o host, o &ldquo;1&rdquo; vai ser lido para identificar a rede, já o
+&ldquo;0&rdquo; serve para identificar os host que seriam os aparelhos conectados na rede. Um exemplo abaixo.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/mask2.png"
+        data-srcset="/images/mask2.png, /images/mask2.png 1.5x, /images/mask2.png 2x"
+        data-sizes="auto"
+        alt="/images/mask2.png"
+        title="image" /></p>
+<p>Comparando os bits de IP e máscara é possível visualizar que os 3 primeiros octetos são destinados a identificar a rede, e o último octeto serve
+para identificar os hosts. Sendo assim o endereço IP 192.168.64.0 com a máscara 255.255.255.0, apenas o único octeto que vai mudar vai ser o último,
+podendo ter endereços IP 192.168.64.x, o x pode ser de 1 a 254.</p>
+<h4 id="cuidado">Cuidado</h4>
+<p>Mas não se engane, nunca vai haver uma máscara em que o primeiro octeto começa com 0 e nem qualquer mistura de 1 e 0, sempre a identificação de
+rede vem primeiro e em seguida vem a identificação de host.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-markdown">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Errado : 00000000.00000000.11111111.11111111
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Errado : 11101010.00011000.11110001.11000010
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Certo  : 11111111.00000000.00000000.00000000</span></span></code></pre></div></div>
+<h3 id="classes">Classes</h3>
+<p>Ademais a isso na <a href="https://datatracker.ietf.org/doc/html/rfc791" target="_blank" rel="noopener noreffer ">RFC 791 (Request For Comment)</a>, onde é a documentação sobre o IPV4, é citado o
+funcionamento da máscara de rede de forma breve, junto a isso foi determinado classes para facilitar qual era a máscara utilizada em determinado IP
+e quantos hosts cabem naquela rede apenas olhando o primeiro octeto do IPV4.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Classes</th>
+					<th>1°octeto</th>
+					<th>faixa em decimal</th>
+					<th>Máscara</th>
+					<th>Quantidade de hosts</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>A</td>
+					<td>0xxxxxxx</td>
+					<td>0-127</td>
+					<td>255.0.0.0</td>
+					<td>16.777.214</td>
+			</tr>
+			<tr>
+					<td>B</td>
+					<td>10xxxxxx</td>
+					<td>128-191</td>
+					<td>255.255.0.0</td>
+					<td>65.534</td>
+			</tr>
+			<tr>
+					<td>C</td>
+					<td>110xxxxx</td>
+					<td>192-223</td>
+					<td>255.255.255.0</td>
+					<td>254</td>
+			</tr>
+	</tbody>
+</table>
+<div class="details admonition note open">
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-pen-to-square" aria-hidden="true"></i>Nota<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content"><p>Existem também as classes D e E, mas não serão abordadas nesse post. Junto a isso também existem certos IP&rsquo;s reservados onde esse sistema de
+classe não se aplica.</p></div>
+    </div>
+</div><h3 id="cidr-classless-inter-domain-routing">CIDR (Classless Inter-Domain Routing)</h3>
+<p>Posteriormente veio o CIDR (Classless Inter-Domain Routing), é um novo método que substitui as classes, agora sendo mais flexível e suportando sub-redes.</p>
+<p>sua notação é simples sendo um &ldquo;/&rdquo; juntamente com a quantidade de números de identificação de rede, exemplo /24 é a mesma coisa que 255.255.255.0
+sendo comum encontrar o número de IP junto ao CIDR 192.32.12.0/24.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-markdown">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">/24 : 11111111.11111111.11111111.00000000
+</span></span><span class="line"><span class="cl">/26 : 11111111.11111111.11111111.11000000
+</span></span><span class="line"><span class="cl">/20 : 11111111.11111111.11110000.00000000</span></span></code></pre></div></div>
+<h3 id="vlsm-variable-length-subnet-masking">VLSM (Variable Length Subnet Masking)</h3>
+<p>VLSM é uma técnica de segmentação de redes, possibilitando a criação de sub-redes, evitando o desperdício de IP.</p>
+<p>Funciona da seguinte maneira: imagine que fomos contratados para configurar a rede de uma loja e temos a seguinte situação, precisamos configurar a rede
+IPv4 149.123.42.0/24, porém o cliente gostaria que tivesse duas redes diferentes, uma rede interna e outra rede com acesso à internet para clientes.
+Antes iríamos usar dois IPv4 diferentes, mas com o VLSM nós adicionamos mais um bit de identificação, dividindo a rede em duas redes diferentes.</p>
+<p>Isso acontece porque, quando adicionamos esse bit de identificação na máscara de rede, o bit correspondente do IPv4 pode ser 0 ou 1, e podemos ir
+adicionando os bits de identificação para suprir a quantidade de hosts necessários, onde o máximo é /31. O máximo não é /32 pois seria apenas um
+IP de identificação e nenhum host ou IP reservado conseguiria se conectar na rede.</p>
+<p>imagem</p>
+<p>O VLSM tem a seguinte regra: do maior número de hosts para o menor número de hosts. Então, quando for fazer várias sub-redes, fique atento a
+quais redes precisam de um número maior de hosts.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Atualizado em 2026-07-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Compartilhe em X" data-sharer="x" data-url="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/" data-title="Como isso funciona? - Máscara de rede, CIDR e VLSM"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Threads" data-sharer="threads" data-url="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/" data-title="Como isso funciona? - Máscara de rede, CIDR e VLSM"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/"><i class="fab fa-facebook-square" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/" data-title="Como isso funciona? - Máscara de rede, CIDR e VLSM"><i class="fab fa-hacker-news" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Line" data-sharer="line" data-url="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/" data-title="Como isso funciona? - Máscara de rede, CIDR e VLSM"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/" data-title="Como isso funciona? - Máscara de rede, CIDR e VLSM"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Compartilhe em Diaspora" data-sharer="diaspora" data-url="http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/" data-title="Como isso funciona? - Máscara de rede, CIDR e VLSM" data-description=""><i class="fab fa-diaspora" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fmasc%25C3%25A1ra-de-redes%2fmascara%2f&amp;text=Como%20isso%20funciona%3f%20-%20M%c3%a1scara%20de%20rede%2c%20CIDR%20e%20VLSM" target="_blank" title="Compartilhe em Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Voltar</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Possibilitado por <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.164.0">Hugo</a> | Tema - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Matheus Amaral Moraes</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Voltar ao topo">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="Ver comentários">
+                <i class="fas fa-comment" aria-hidden="true"></i>
+            </a>
+        </div><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/typeit/index.umd.js"></script><script>window.config={"comment":{},"data":{"id-1":"Amaral Cyber Journal","id-2":"Amaral Cyber Journal"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.js"></script></body>
+</html>

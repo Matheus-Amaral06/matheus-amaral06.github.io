@@ -1,33 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Amaral Cyber Journal</title>
-    <link>http://localhost:1313/pt-br/posts/</link>
-    <description>Recent content in Posts on Amaral Cyber Journal</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language>
-    <managingEditor>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</managingEditor>
-    <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster>
-    <lastBuildDate>Tue, 26 May 2026 19:24:50 -0300</lastBuildDate><atom:link href="http://localhost:1313/pt-br/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Como isso funciona? - Máscara de rede e CIDR</title>
-      <link>http://localhost:1313/pt-br/posts/mascara/</link>
-      <pubDate>Tue, 26 May 2026 19:24:50 -0300</pubDate>
-      <author>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</author>
-      <guid>http://localhost:1313/pt-br/posts/mascara/</guid>
-      
-      <description>&lt;h3 id=&#34;o-que-é&#34;&gt;O que é?&lt;/h3&gt;
-&lt;p&gt;A mácara de rede é uma ferramenta que possibilita identificação, segmentação de redes e limitação de número de máquinas na rede. Uma mácara é
-composta por quatro octetos de bits separados por um &amp;ldquo;.&amp;rdquo;, mas para melhor visualisação o padrão é em forma decimal igualmente ao IPv4.&lt;/p&gt;
-&lt;p&gt;&amp;lsquo;&amp;lsquo;&amp;lsquo;markdown
-Decimal : 255.255.255.0 &amp;lt;- Forma mais comum
-Binário : 11111111.11111111.11111111.00000000 &amp;lt;- Forma que o computador interpreta&lt;/p&gt;
-&lt;p&gt;&amp;rsquo;&amp;rsquo;&amp;rsquo;&lt;/p&gt;
-&lt;p&gt;Você deve estar se perguntando, por que tem octetos que apenas tem &amp;ldquo;1&amp;rdquo; e octetos que apenas tem &amp;ldquo;0&amp;rdquo;. Cada binário tem sua função, informar se o
-bit que está na mesma poscição do endereço IPv4 vai servir para identificar a rede ou o host, o &amp;ldquo;1&amp;rdquo; vai ser lido para identificar a rede, já o &amp;ldquo;0&amp;rdquo;
-serve para identifficar os host que seriam os aparelhos conectados na rede. Um exemplo abaixo.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Posts - Amaral Cyber Journal</title>
+        <link>http://localhost:1313/pt-br/posts/</link>
+        <description>Posts | Amaral Cyber Journal</description>
+        <generator>Hugo -- gohugo.io</generator><language>pt-BR</language><managingEditor>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</managingEditor>
+            <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster><lastBuildDate>Tue, 26 May 2026 19:24:50 -0300</lastBuildDate><atom:link href="http://localhost:1313/pt-br/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Como isso funciona? - Máscara de rede e CIDR</title>
+    <link>http://localhost:1313/pt-br/posts/mascara/</link>
+    <pubDate>Tue, 26 May 2026 19:24:50 -0300</pubDate>
+    <author>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</author>
+    <guid>http://localhost:1313/pt-br/posts/mascara/</guid>
+    <description><![CDATA[<h3 id="o-que-é">O que é?</h3>
+<p>A mácara de rede é uma ferramenta que possibilita identificação, segmentação de redes e limitação de número de máquinas na rede. Uma mácara é
+composta por quatro octetos de bits separados por um &ldquo;.&rdquo;, mas para melhor visualisação o padrão é em forma decimal igualmente ao IPv4.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-markdown">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Decimal : 255.255.255.0 &lt;- Forma mais comum
+</span></span><span class="line"><span class="cl">Binário : 11111111.11111111.11111111.00000000 &lt;- Forma que o computador interpreta </span></span></code></pre></div></div>
+<p>Você deve estar se perguntando, por que tem octetos que apenas tem &ldquo;1&rdquo; e octetos que apenas tem &ldquo;0&rdquo;. Cada binário tem sua função, informar se o
+bit que está na mesma poscição do endereço IPv4 vai servir para identificar a rede ou o host, o &ldquo;1&rdquo; vai ser lido para identificar a rede, já o &ldquo;0&rdquo;
+serve para identifficar os host que seriam os aparelhos conectados na rede. Um exemplo abaixo.</p>]]></description>
+</item>
+</channel>
 </rss>

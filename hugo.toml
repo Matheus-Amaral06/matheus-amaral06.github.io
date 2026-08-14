@@ -1,10 +1,11 @@
 baseURL = "https://matheus-amaral06.github.io/"
 # Change the default theme to be use when building the site with Hugo
-theme = "hugo-blog-awesome"
-defaultContentLanguage = "en"
+theme = "LoveIt"
+defaultContentLanguage = "pt-br"
+languageCode = "pt-br"
 # website title
 title = "My New Hugo Site"
-defaultContentLanguageInSubdir = true
+
 
 
 [taxonomies]
@@ -13,39 +14,19 @@ defaultContentLanguageInSubdir = true
 # language name ["English", "简体中文", "Français", "Polski", ...]
 # Menu config
 
-[languages.en]
-    weight = 1
-    title = "Amaral Cyber Journal"
-    locale = "en"
-    label = "English"
-    contentDir = "content/en/"
-    [[languages.en.menu.main]]
+[menu]
+
+    [[menu.main]]
       weight = 1
       identifier = "posts"
       name = "Posts"
       url = "/posts/"       # ← sem prefixo
-    [[languages.en.menu.main]]
+    [[menu.main]]
       weight = 2
       identifier = "about"
-      name = "About"
-      url = "/about/"       # ← sem prefixo
-
-  [languages.pt-br]
-    weight = 2
-    title = "Amaral Cyber Journal"
-    locale = "pt-BR"
-    label = "Português"
-    contentDir = "content/pt-br/"
-    [[languages.pt-br.menu.main]]
-      weight = 1
-      identifier = "posts"
-      name = "Posts"
-      url = "/posts/"       # ← sem prefixo, Hugo adiciona /pt-br/ sozinho
-    [[languages.pt-br.menu.main]]
-      weight = 2
-      identifier = "sobre"
       name = "Sobre"
-      url = "/about/"  
+      url = "/sobre/"       # ← sem prefixo
+
 [params]
   # site default theme ["auto", "light", "dark"]
   defaultTheme = "light"
