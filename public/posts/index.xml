@@ -1,10 +1,37 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Posts - My New Hugo Site</title>
+        <title>Posts - Amaral Cyber Journal</title>
         <link>http://localhost:1313/posts/</link>
-        <description>Posts | My New Hugo Site</description>
+        <description>Posts | Amaral Cyber Journal</description>
         <generator>Hugo -- gohugo.io</generator><language>pt-br</language><managingEditor>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</managingEditor>
-            <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster><lastBuildDate>Wed, 22 Jul 2026 19:24:50 -0300</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</webMaster><lastBuildDate>Fri, 21 Aug 2026 21:17:11 -0300</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Como isso funciona? - Permissões no Linux</title>
+    <link>http://localhost:1313/posts/permiss%C3%B5es/permiss%C3%B5es/</link>
+    <pubDate>Fri, 21 Aug 2026 21:17:11 -0300</pubDate>
+    <author>matheusamaralmoraes06@gmail.com (Matheus Amaral Moraes)</author>
+    <guid>http://localhost:1313/posts/permiss%C3%B5es/permiss%C3%B5es/</guid>
+    <description><![CDATA[<h2 id="primeiro-contato">Primeiro contato</h2>
+<p>Ao utilizar o comando <code>ls -l</code> você já deve ter se departamento com isso.</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copiar para a área de transferência"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">$ls</span> -l <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">total
+</span></span><span class="line"><span class="cl">-rw-r--r--
+</span></span><span class="line"><span class="cl">drwxr-xr-x
+</span></span><span class="line"><span class="cl">drwxr-xr-x
+</span></span><span class="line"><span class="cl">drwxr-xr-x
+</span></span><span class="line"><span class="cl">drwx------
+</span></span><span class="line"><span class="cl">drwxr-xr-x
+</span></span><span class="line"><span class="cl">drwxr-xr-x
+</span></span><span class="line"><span class="cl">lrwxrwxrwx
+</span></span><span class="line"><span class="cl">-rw-r--r--</span></span></code></pre></div></div>
+<p>E você deve estar se perguntando o que é esse monte de letras. Bem, essas são as permissões e o tipo de arquivo. Os tipos de arquivo são o primeiro caractere, e logo em seguida vêm as permissões.</p>]]></description>
+</item>
+<item>
     <title>Como isso funciona? - Máscara de rede, CIDR e VLSM</title>
     <link>http://localhost:1313/posts/masc%C3%A1ra-de-redes/mascara/</link>
     <pubDate>Wed, 22 Jul 2026 19:24:50 -0300</pubDate>
